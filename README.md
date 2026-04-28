@@ -1,155 +1,175 @@
-# 🚕 Urban Routes QA Testing & Automation Project
+# 🚕 Urban Routes QA Case Study  
+## Manual Testing, Bug Management & Python Selenium Automation
+
+## 📌 Overview
+Urban Routes is a route-building web application that calculates travel time and cost across different transportation options.
+
+This case study demonstrates my QA process across three phases:
+
+1. **Strategic Analysis & Test Design**
+2. **Manual Testing & Bug Management**
+3. **Automation Framework with Python & Selenium**
 
 ![Urban Routes app](images/UrbanRoutes.jpeg)
 
-## 📖 Overview
-
-The **Urban Routes Web Application** is a route-building platform that calculates travel time and cost across multiple transportation modes.
-
-This project combines:
-
-* 🧪 **Manual QA Testing (Project 3)** – UI, functionality, and defect reporting
-* 🤖 **Python Automation (Project 7)** – scalable test framework design
-
-The goal is to demonstrate both **strong QA fundamentals** and **automation-ready thinking** in a real-world application. 
-
 ---
 
-## 🎯 Objectives
+# Phase 1: Strategic Analysis & Test Design
 
-* Validate **core functionality (route, booking, pricing)**
-* **UI Validation** (Figma)
-* Design **robust test cases using QA techniques**
-* Identify and document **critical defects**
-* Build a **modular Python test framework**
-* Prepare for **future Selenium automation**
-![Figma Design](/images/figma_carsharing.jpeg)
-Figure: Mind map used to identify edge cases and system flow*
+## 🧠 Requirements Visualization
 
----
-
-## 🧠 Requirement Analysis
-
-To better understand the application flow and identify edge cases, I created a mind map to visualize features, logic, and user paths.
+Before testing, I analyzed the Urban Routes application flow using a mind map. This helped me understand the relationship between route inputs, transportation modes, booking options, and expected system behavior.
 
 ![Mind Map](/images/mindMap.jpeg)
 
----
+*Figure: Mind map used to visualize app flow, logic, and test coverage.*
 
-# 🧠 Part 1: Manual QA Testing
+## 🧪 Test Design Techniques
 
-## 🔍 Testing Scope
+I applied structured QA techniques to design stronger test coverage:
 
-* Route calculation (time & cost)
-* Travel modes (Optimal, Fastest, Custom)
-* Transportation types
-* Carsharing & Aerotaxi features
-* Booking flow & payment validation
+- **Equivalence Class Partitioning (ECP)**
+- **Boundary Value Analysis (BVA)**
+- **Positive and negative testing**
 
----
+Focus areas included:
 
-## 🧪 Testing Approach
-
-* Equivalence Partitioning
-* Boundary Value Analysis
-* Positive & Negative Testing
-* Cross-browser testing (Chrome, Firefox)
+- “From” and “To” address fields
+- Travel modes
+- Carsharing booking flow
+- Payment method validation
+- Driver’s license form behavior
 
 ---
 
-## 🐞 Bug Report Summary
+# Phase 2: Manual Testing & Bug Management
 
-* **Total Bugs Found:** 42
-* Managed using **Jira**
+## 🔍 Manual Testing Scope
+
+Manual testing focused on validating the user experience and core business logic of the Urban Routes app.
+
+Test coverage included:
+
+- Route calculation
+- Travel time and cost accuracy
+- Carsharing and Aerotaxi features
+- Booking flow
+- Payment method
+- UI layout against Figma design
+- Cross-browser behavior in Chrome and Firefox
+
+## 🎨 UI Validation
+
+I compared the application layout against Figma designs to verify spacing, alignment, text accuracy, and overall consistency.
+
+![Figma Design](/images/figma_carsharing.jpeg)
+
+*Figure: Figma reference used for UI validation.*
+
+---
+
+## 🐞 Defect Analysis
+
+During testing, I identified and documented **42 bugs** in Jira.
+
+Each bug report included:
+
+- Clear title
+- Steps to reproduce
+- Expected result
+- Actual result
+- Severity
+- Supporting screenshots or evidence
 
 ---
 
 ## 📊 Bug Severity Distribution
 
-| Severity  | Count | Description                                                         |
-| --------- | ----- | ------------------------------------------------------------------- |
-| 🔴 High   | 12    | Core functionality broken (booking failure, incorrect calculations) |
-| 🟠 Medium | 18    | UI inconsistencies, validation issues                               |
-| 🟢 Low    | 12    | Minor UI/UX issues                                                  |
+| Severity | Count | Description |
+|----------|------:|-------------|
+| 🔴 High | 12 | Core functionality issues that blocked or seriously affected user flow |
+| 🟠 Medium | 18 | Validation, UI, or inconsistent behavior issues |
+| 🟢 Low | 12 | Minor visual or usability issues |
 
-**Total Bugs Identified:** 42
+**Total Bugs Identified: 42**
 
 ---
 
 ## 🎯 Top 5 Critical Bugs Identified
 
-### 1. 🚨 Incorrect Travel Cost Calculation
+### 1. Driver’s License Form Does Not Appear
+When all required fields are empty, clicking the **Book** button does not trigger the driver’s license form or show proper validation.
 
-* Cost did not match pricing algorithm
-* Impact: Users may make incorrect booking decisions
-* Severity: 🔴 High
-
----
-
-### 2. 🚨 Booking Flow Failure
-
-* "Book" button failed under certain conditions
-* Impact: Users unable to complete booking
-* Severity: 🔴 High
+**Impact:** Blocks the booking flow and creates user confusion.  
+**Severity:** High
 
 ---
 
-### 3. 🚨 Missing Payment Validation
+### 2. Incorrect Travel Cost Calculation
+The displayed travel cost does not match the expected pricing logic.
 
-* Invalid card details were accepted
-* Impact: Risk of failed transactions
-* Severity: 🔴 High
-
----
-
-### 4. ⚠️ Cross-Browser Layout Issues
-
-* UI misalignment in Firefox
-* Impact: Inconsistent UX
-* Severity: 🟠 Medium
+**Impact:** Users may make decisions based on incorrect information.  
+**Severity:** High
 
 ---
 
-### 5. ⚠️ Missing Error Handling
+### 3. Booking Button Fails Under Certain Conditions
+The **Book** button does not respond correctly in specific booking scenarios.
 
-* No feedback for invalid inputs
-* Impact: Confusing user experience
-* Severity: 🟠 Medium
+**Impact:** Users may be unable to complete a booking.  
+**Severity:** High
+
+---
+
+### 4. Missing Payment Validation
+Invalid or incomplete card details are accepted or not handled properly.
+
+**Impact:** Creates risk of failed transactions and poor user experience.  
+**Severity:** High
+
+---
+
+### 5. Cross-Browser Layout Issue
+Some UI elements display differently between Chrome and Firefox.
+
+**Impact:** Inconsistent experience across browsers.  
+**Severity:** Medium
 
 ---
 
 ## 🧾 Example Bug Report (Jira)
 
-**Title:** The order can’t be canceled during the free waiting time period.
+**Title:** During the free waiting time period, click the cancel “X” icon on “order sent” window doesn’t cancel the order.
 
 **Description**
-When click “x Cancel” button to cancel the order during the free waiting time period the system doesn’t responded.
-
+The order can not be canceled during the free waiting time period by click on the cancel "X" icon on "Order sent" window.
 **Preconditions**
-1. Launch app 
-2. Enter "1917 Bay St" in the "From" field 
-3. Enter "615 S Broadway" in the "To: field. 
-4. Select "Home"
-5. Choose "Drive" as the mode of transportation 
-6. Click on the "Book" button.
-
+1. Launch the Urban Routes application
+2. Enter “1917 Bay St.“ in the “From” field
+3. Enter “615 S Broadway“ in the “To“ field
+4. Select “Custom”
+5. Select “Drive” car icon
+6. Click “Book”
+   
 **Steps to Reproduce:**
 
 1. Add driver license
 2. Add a bank card
-3. Click on the reservation button
-4. Click "Cancel" button
+3. Click on "Book" button
+4. Click on "X" cancel button
 
 **Expected Result:**
 The order is canceled. 
 
 **Actual Result:**
-The order can’t be canceled
+The order is not canceled. the cancel button isn’t responding.
 
 **Environment:**
 
-* Browser: Chrome 118.0.5993.88 (Official Build) (x86_64)
-* Screen solution 800x600
+* Browser:
+  - Chrome 118.0.5993.88 (Official Build) (x86_64) Screen solution 800x600
+  - FireFox 119.0 (64-bit) Screen solution 1920x1080
+    
 * OS: macOS Ventura 13.5.2
 
 
@@ -163,37 +183,53 @@ The order can’t be canceled
 
 ---
 
-# 🤖 Part 2: Python Automation Framework
+# Phase 3: Automation Framework  
+## Python & Selenium
 
-To prepare for UI automation, I built a **modular Python test framework** using best practices.
+## 🤖 Automation Goal
+
+After completing manual testing, I built a Python Selenium automation framework to validate important user flows and prepare the project for scalable regression testing.
+
+The framework focuses on:
+
+- Maintainability
+- Reusability
+- Clear test structure
+- Separation of test data, helper logic, page elements, and test cases
 
 ---
 
-## 🧱 Project Structure
+## 🧱 Framework Architecture
 
-```python
+```text
 Urban-Routes-Automation/
 │
-├── data.py
-├── helpers.py
-├── main.py
-└── pages.py
-```
+├── data.py       # Test constants and input data
+├── helpers.py    # Utility functions and server health check
+├── pages.py      # Page Object Model: selectors and page actions
+└── main.py       # Pytest test suite
+````
 
 ---
 
-## 📦 Test Data Management
+## 📦 `data.py` — Centralized Test Data
+
+The `data.py` file stores reusable constants such as URLs, addresses, and phone numbers.
 
 ```python
-URBAN_ROUTES_URL = ''
-ADDRESS_FROM = 'East 2nd Street, 601'
-ADDRESS_TO = '1300 1st St'
-PHONE_NUMBER = '+1234567890'
+URBAN_ROUTES_URL = ""
+ADDRESS_FROM = "East 2nd Street, 601"
+ADDRESS_TO = "1300 1st St"
+PHONE_NUMBER = "+1234567890"
 ```
+
+This keeps test data separate from test logic and makes updates easier.
 
 ---
 
-## 🔌 Environment Validation
+## 🔌 `helpers.py` — Server Health Check
+
+The framework includes a server health check to verify that the testing environment is available before running tests.
 
 ```python
 @classmethod
@@ -205,12 +241,31 @@ def setup_class(cls):
         sys.exit()
 ```
 
-✅ Prevents false failures
-✅ Reflects real-world QA practices
+This helps prevent false failures caused by an unavailable server.
 
 ---
 
-## 🧠 Example Automated Test (Real Test Case)
+## 🧩 `pages.py` — Page Object Model
+
+The `pages.py` file contains element selectors and interaction methods.
+
+Example page methods include:
+
+```python
+routes_page.set_route(data.ADDRESS_FROM, data.ADDRESS_TO)
+routes_page.fill_phone_number(data.PHONE_NUMBER)
+routes_page.verified_phone_number()
+```
+
+Using the Page Object Model helps keep the test suite clean, readable, and easier to maintain.
+
+---
+
+## 🧪 `main.py` — Pytest Test Suite
+
+The test suite is structured using Pytest classes and descriptive test methods.
+
+### Example Automated Test
 
 ```python
 def test_fill_phone_number(self):
@@ -224,41 +279,30 @@ def test_fill_phone_number(self):
     assert entered_phone == data.PHONE_NUMBER, f"Expected phone: {data.PHONE_NUMBER}, but got: {entered_phone}"
 ```
 
-### ✅ What This Test Demonstrates
+## ✅ What This Test Demonstrates
 
-* Page Object Model usage (`UrbanRoutesPage`)
-* Clear test intent and validation
-* Separation of test data from logic
-* Real user flow simulation
-
----
-
-## 🔁 Example: Reusable UI Logic Preparation
-
-```python
-    def select_supportive_plan(self):
-        """Selects the supportive plan if it's not already active."""
-        element = self.driver.find_element(*self.SUPPORTIVE_PLAN_CARD)
-        if "active" not in element.get_attribute("class"):
-            element.click()
-```
-
-➡️ Designed for future Selenium UI interaction
+* Selenium-based browser interaction
+* Page Object Model structure
+* Data-driven test design
+* Clear assertion and validation
+* Real user flow automation
 
 ---
 
-## 🧪 Test Scenarios Covered
+## 🧪 Automated Test Scenarios
+
+The framework was designed to cover key Urban Routes flows:
 
 * Set route
 * Select plan
-* Enter phone number
+* Fill phone number
 * Add payment method
 * Add driver message
-* Order extras
-* Verify car search
+* Add extras
+* Order ice cream
+* Verify car search modal
 
 ---
-
 ## 🧼 Code Quality Standards
 
 * snake_case naming
@@ -271,57 +315,44 @@ def test_fill_phone_number(self):
 
 ## 🧰 Tools & Technologies
 
-* **Jira** – Bug tracking
-* **Charles Proxy** – Network debugging
-* **Figma** – UI validation
-* **Python**
-* **Pytest**
-* Chrome & Firefox
+* Python
+* Selenium WebDriver
+* Pytest
+* Jira
+* Figma
+* Charles Proxy
+* Chrome
+* Firefox
+* Chrome DevTools
 
 ---
 
-## 📊 Key Results
+## 📊 Results & Impact
 
-* Identified **42 bugs**, improving product quality
-* Built **automation-ready test structure**
-* Increased **test coverage and reliability**
-* Strengthened both **manual & automation QA skills**
-
----
-
-## 💡 Key Learnings
-
-* Strong test design improves defect detection
-* Clear bug reports improve team collaboration
-* Separating data from logic is critical in automation
-* Validating environment prevents false failures
-* QA requires both technical and user-focused thinking
+* Identified and documented **42 bugs**
+* Improved coverage for critical booking and route-building flows
+* Validated UI behavior against Figma design
+* Built an automation-ready Selenium framework
+* Demonstrated both manual QA and automation engineering skills
 
 ---
 
-## 🚀 🔄 Future Enhancements
+## 💡 Key Takeaways
 
-* Implement **Selenium UI automation**
-* Apply **Page Object Model (POM) fully**
-* Add **CI/CD integration**
-* Expand into **API testing**
+This project helped me strengthen my QA skills by combining strategic test design, hands-on defect reporting, and automation framework development.
 
----
+I learned how to:
 
-## 💬 Reflection
-
-This project helped me bridge the gap between **manual QA and automation** by combining structured testing with scalable code design.
-
-It strengthened my ability to:
-
-* Think critically about user flows
-* Design maintainable test systems
-* Prepare real-world automation solutions
+* Break down requirements into testable flows
+* Use ECP and BVA to improve coverage
+* Report bugs clearly and professionally
+* Build maintainable automation using Python, Selenium, Pytest, and POM
 
 ---
 
-## ⭐ Author
+## 👩‍💻 Author
 
 **Warunee Dinunzio**
+
 QA Automation Engineer
 
