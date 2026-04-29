@@ -365,9 +365,10 @@ I learned how to:
 
 ---
 
-## 👩‍💻 Author
+## 📫 Author
 
-**Warunee Dinunzio**
+**Warunee Dinunzio**  
+QA Automation Engineer | Software Engineer  
 
-QA Automation Engineer
-
+📧 dinunziow@gmail.com  
+💼 https://www.linkedin.com/in/warunee-dinunzio/
