@@ -156,6 +156,7 @@ Users cannot select car icons displayed on the map.
 
 **Description**
 The order can not be canceled during the free waiting time period by click on the cancel "X" icon on "Order sent" window.
+
 **Preconditions**
 1. Launch the Urban Routes application
 2. Enter “1917 Bay St.“ in the “From” field
