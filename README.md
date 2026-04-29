@@ -80,7 +80,7 @@ Each bug report included:
 - Steps to reproduce
 - Expected result
 - Actual result
-- Severity
+- Priority
 - Supporting screenshots or evidence
 
 ---
@@ -185,9 +185,6 @@ The order is not canceled. the cancel button isn’t responding.
   - FireFox 119.0 (64-bit) Screen solution 1920x1080
     
 * OS: macOS Ventura 13.5.2
-
-
-**Severity:** 🔴 High
 
 **Priority:** High
 
