@@ -82,14 +82,20 @@ Each bug report included:
 - Supporting screenshots or evidence
 
 ---
+Here’s your **priority distribution report** based on the WDP6 bugs you shared:
 
-## 📊 Bug Severity Distribution
+---
 
-| Severity | Count | Description |
-|----------|------:|-------------|
-| 🔴 High | 12 | Core functionality issues that blocked or seriously affected user flow |
-| 🟠 Medium | 18 | Validation, UI, or inconsistent behavior issues |
-| 🟢 Low | 12 | Minor visual or usability issues |
+## 📊 Bug Priority Distribution
+
+| Priority   | Count | Description                                                                 |
+| ---------- | ----: | --------------------------------------------------------------------------- |
+| 🔴 Highest |     8 | Critical failures that crash the app or completely block core functionality |
+| 🟠 High    |     9 | Major issues affecting pricing accuracy or key user decisions               |
+| 🟡 Medium  |     16 | Functional inconsistencies, missing details, or unclear user flows          |
+| 🟢 Low     |     6 | Minor UI or readability issues                                              |
+| ⚪ Lowest   |     3 | Cosmetic or non-impactful issues                                            |
+
 
 **Total Bugs Identified: 42**
 
@@ -97,43 +103,48 @@ Each bug report included:
 
 ## 🎯 Top 5 Critical Bugs Identified
 
-### 1. Driver’s License Form Does Not Appear
-When all required fields are empty, clicking the **Book** button does not trigger the driver’s license form or show proper validation.
+#### 1. Application Freezes After Cancel Confirmation (WDP3-31)
 
-**Impact:** Blocks the booking flow and creates user confusion.  
-**Severity:** High
+When the user clicks “Yes” to confirm canceling an order, the application becomes unresponsive.
 
----
-
-### 2. Incorrect Travel Cost Calculation
-The displayed travel cost does not match the expected pricing logic.
-
-**Impact:** Users may make decisions based on incorrect information.  
-**Severity:** High
+**Impact:** Completely breaks the app experience and prevents any further user action.
+**Priority:** Highest
 
 ---
 
-### 3. Booking Button Fails Under Certain Conditions
-The **Book** button does not respond correctly in specific booking scenarios.
+### 2. Cancel Button Is Unresponsive (WDP3-30)
 
-**Impact:** Users may be unable to complete a booking.  
-**Severity:** High
+Clicking the “Cancel” button on the “Order sent” window does not trigger any action.
 
----
-
-### 4. Missing Payment Validation
-Invalid or incomplete card details are accepted or not handled properly.
-
-**Impact:** Creates risk of failed transactions and poor user experience.  
-**Severity:** High
+**Impact:** Users cannot cancel their order, removing critical control over the booking process.
+**Priority:** Highest
 
 ---
 
-### 5. Cross-Browser Layout Issue
-Some UI elements display differently between Chrome and Firefox.
+### 3. Cannot Cancel Order During Free Waiting Time (WDP3-3)
 
-**Impact:** Inconsistent experience across browsers.  
-**Severity:** Medium
+Users are unable to cancel an order during the free waiting time period.
+
+**Impact:** Blocks a key user action and can lead to frustration or unintended charges.
+**Priority:** Highest
+
+---
+
+### 4. Application Freezes When Free Waiting Time Ends (WDP3-4)
+
+When the free waiting time expires, the application stops responding.
+
+**Impact:** Causes system instability and disrupts the entire user experience.
+**Priority:** Highest
+
+---
+
+### 5. Car Icons on Map Are Not Selectable (WDP3-21)
+
+Users cannot select car icons displayed on the map.
+
+**Impact:** Prevents users from choosing a car, blocking a core step in the booking flow.
+**Priority:** Highest
 
 ---
 
