@@ -62,7 +62,9 @@ Test coverage included:
 
 I compared the application layout against Figma designs to verify spacing, alignment, text accuracy, and overall consistency.
 
-![Figma Design](/images/figma_carsharing.jpeg)
+![Figma Design](/images/urban_routes_car_share.png)
+![Figma Design](/images/urban_routes_figma1.png)
+![Figma Design](/images/urban_routes_figma2.png)
 
 *Figure: Figma reference used for UI validation.*
 
@@ -189,6 +191,8 @@ The order is not canceled. the cancel button isn’t responding.
 **Priority:** High
 
 ---
+
+![Jira bug report](/images/urban_routes_Jira.png)
 
 👉 Full bug reports available upon request (tracked in Jira)
 
